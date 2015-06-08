@@ -163,7 +163,7 @@ class Cbxdynamicsidebar {
 		//$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		//$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'admin_init', 10 );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'admin_init', 1 );
 		add_action( 'widgets_init', array($plugin_admin,'cbxdynamicsidebar_register_sidebars') );
 
 		$this->loader->add_filter( 'post_row_actions', $plugin_admin, 'sidebar_action_row', 10, 2);

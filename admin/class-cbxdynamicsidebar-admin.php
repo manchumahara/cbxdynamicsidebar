@@ -62,7 +62,9 @@ class Cbxdynamicsidebar_Admin {
 
 		//var_dump($this->loader);
 
-		//$this->loader->add_filter( 'manage_cbxsidebar_posts_columns', $this, 'cbxsidebar_columns', 10);
+		add_filter( 'manage_cbxsidebar_posts_columns', array($this, 'cbxsidebar_columns'), 10, 1);
+		add_action('manage_cbxsidebar_posts_custom_column', array($this, 'cbxsidebar_column'), 10, 2);
+
 		//manage_{$post_type}_posts_columns
 		$this->loader->add_filter( 'manage_cbxsidebar_posts_columns', $this, 'cbxsidebar_columns', 10);
 	}
@@ -218,46 +220,33 @@ class Cbxdynamicsidebar_Admin {
 	}
 
 
+
 	public function sidebar_action_row($actions, $post){
 
-		//var_dump($post);
-
 		if ($post->post_type =="cbxsidebar"){
-			//remove what you don't need
 			unset( $actions['inline hide-if-no-js'] );
-			//unset( $actions['trash'] );
 			unset( $actions['view'] );
-			/*
-			//check capabilites
-			$post_type_object = get_post_type_object( $post->post_type );
-			if ( !$post_type_object ) return;
-			if ( !current_user_can( $post_type_object->cap->delete_post, $post->ID ) ) return;
-
-			//the get the meta and check
-			$state = get_post_meta( $post->ID, 'v_state', true );
-			if ($state == 'in'){
-				$actions['trash'] = "<a class='submitdelete' title='" . esc_attr(__('Delete this item permanently')) . "' href='" . get_delete_post_link($post->ID, '', true) . "'>" . __('Logout') . "</a>";
-			}else{
-				$actions['trash'] = "<a class='submitdelete' title='" . esc_attr(__('Delete this item permanently')) . "' href='" . get_delete_post_link($post->ID, '', true) . "'>" . __('Login') . "</a>";
-
-
-			}
-			*/
 		}
 		return $actions;
 
 	}
 
-	 public function cbxsidebar_columns($columns){
+	 function cbxsidebar_column( $column_name, $post_id ) {
+		if ($column_name == 'shortcode') {
+			echo '[cbxdynamicsidebar id="'.$post_id.'"]';
+		}
+	 }
 
-		//var_dump($columns); exit();
+	 public function cbxsidebar_columns($columns ){
+
 
 		unset($columns['date']);
+		$columns['shortcode'] = __('Shortcode', $this->plugin_name);
 		return $columns;
 	}
 
 	public function add_meta_boxes(){
-		//var_dump($this);
+
 		//photo meta box
 		add_meta_box(
 			'cbxdynamicsidebarmetabox', __('Sidebar Definitions', $this->plugin_name), array($this, 'cbxdynamicsidebarmetabox_display'), 'cbxsidebar', 'normal','high'
@@ -273,7 +262,7 @@ class Cbxdynamicsidebar_Admin {
 		wp_nonce_field( 'cbxdynamicsidebarmetabox', 'cbxdynamicsidebarmetabox[nonce]' );
 		//<input type="hidden" id="name_of_nonce_field" name="name_of_nonce_field" value="a62a76f53d">
 
-		echo '<h2>Shortcode Usages:</h2>';
+		echo '<h2>'.__('Shortcode Usages:', $this->plugin_name).'</h2>';
 		echo '<code>[cbxdynamicsidebar id="'.$post->ID.'" float="auto" wid="" wclass="" /]</code>';
 
 		echo '<div id="cbxdynamicsidebarmetabox_wrapper">';
@@ -371,12 +360,12 @@ class Cbxdynamicsidebar_Admin {
 			return;
 		}
 
-		//var_dump($_POST['cbxdynamicsidebarmetabox']); exit();
+
 
 		if(!empty($_POST['cbxdynamicsidebarmetabox'])) {
-			//var_dump('hellow man'); exit;
+
 			$postData = $_POST['cbxdynamicsidebarmetabox'];
-			//var_dump($postData); exit();
+
 
 			$saveableData  = array();
 

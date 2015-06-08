@@ -1,21 +1,14 @@
 <?php
-
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
  *
  * @link              http://wpboxr.com
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Cbxdynamicsidebar
  *
  * @wordpress-plugin
  * Plugin Name:       CBX Dynamic Sidebar
  * Plugin URI:        http://wpboxr.com/product/cbx-dynamic-sidebar-for-wordpress
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Dynamic sidebar for wordpress using custom post type and shortcode
  * Version:           1.0.0
  * Author:            WPBoxr
  * Author URI:        http://wpboxr.com
@@ -73,3 +66,55 @@ function run_cbxdynamicsidebar() {
 
 }
 run_cbxdynamicsidebar();
+
+
+if(!function_exists('cbxdynamicsidebar_display')){
+	/**
+	 * Custom function call
+	 *
+	 * @param $arr
+	 */
+	function cbxdynamicsidebar_display($atts){
+		$arr = shortcode_atts( array(
+			'id'            => 0 ,
+			'wclass'        => 'cbxdynamicsidebar_wrapper',
+			'wid'           => 'cbxdynamicsidebar_wrapper',
+			'float'         => 'auto'
+
+		), $atts );
+
+		extract($arr);
+
+		if(intval($id) < 1) return '';
+
+		$sidebar_custom     = get_post_meta( $id, '_cbxdynamicsidebar', true);
+		$active             = intval($sidebar_custom['active']);
+
+		if(!$active) return '';
+
+		if(is_active_sidebar('cbxdynamicsidebar-'.$id)){
+			$sidebar_html = '<div style="float:'.$float.';" id="'.$wid.$id.'" class="'.$wclass.' '.$wclass.$id.'" role="complementary">';
+			ob_start();
+			dynamic_sidebar( 'cbxdynamicsidebar-'.$id );
+			$sidebar_html .= ob_get_contents();
+			ob_end_clean();
+			//echo $sidebar_html;
+			$sidebar_html .= '</div>';
+			return $sidebar_html;
+		}
+
+	}
+}
+
+/*
+//how to call function from ohter plugin or theme
+if(function_exists('cbxdynamicsidebar_display')){
+	$config_array = array(
+		'id'       => '686',
+		'wclass'        => 'cbxdynamicsidebar_wrapper',
+		'wid'           => 'cbxdynamicsidebar_wrapper',
+		'float'         => 'auto'
+	);
+	echo cbxdynamicsidebar_display($config_array);
+}
+*/

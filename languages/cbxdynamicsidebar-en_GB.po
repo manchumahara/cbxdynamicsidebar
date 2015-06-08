@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CBX Dynamic Sidebar v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-06-08 04:10:08+0000\n"
+"Last-Translator: manchumahara <sabuj@codeboxr.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: admin/class-cbxdynamicsidebar-admin.php:122
+#@ cbxdynamicsidebar
+msgctxt "Post Type General Name"
+msgid "Sidebars"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:123
+#@ cbxdynamicsidebar
+msgctxt "Post Type Singular Name"
+msgid "Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:124
+#@ cbxdynamicsidebar
+msgid "CBX Sidebars"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:125
+#@ cbxdynamicsidebar
+msgid "Parent Sidebar:"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:126
+#@ cbxdynamicsidebar
+msgid "All Sidebars"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:127
+#@ cbxdynamicsidebar
+msgid "View Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:128
+#@ cbxdynamicsidebar
+msgid "Add New Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:129
+#@ cbxdynamicsidebar
+msgid "Add New"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:130
+#@ cbxdynamicsidebar
+msgid "Edit Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:131
+#@ cbxdynamicsidebar
+msgid "Update Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:132
+#@ cbxdynamicsidebar
+msgid "Search Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:133
+#@ cbxdynamicsidebar
+msgid "Not found"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:134
+#@ cbxdynamicsidebar
+msgid "Not found in Trash"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:137
+#@ cbxdynamicsidebar
+msgid "cbxsidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:138
+#@ cbxdynamicsidebar
+msgid "Dynamic Sidebars"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:244
+#@ cbxdynamicsidebar
+msgid "Shortcode"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:252
+#@ cbxdynamicsidebar
+msgid "Sidebar Definitions"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:265
+#@ cbxdynamicsidebar
+msgid "Shortcode Usages:"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:272
+#@ cbxdynamicsidebar
+msgid "Yet another Dynamic Sidebar"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:287
+#@ cbxdynamicsidebar
+msgid "Sidebar Enabe/Disable"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:292
+#@ cbxdynamicsidebar
+msgid "No"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:296
+#@ cbxdynamicsidebar
+msgid "Yes"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:302
+#@ cbxdynamicsidebar
+msgid "Description"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:309
+#@ cbxdynamicsidebar
+msgid "CSS Class"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:315
+#@ cbxdynamicsidebar
+msgid "Before Widget Html Wrapping"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:321
+#@ cbxdynamicsidebar
+msgid "After Widget Html Wrapping"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:327
+#@ cbxdynamicsidebar
+msgid "Before Title Html Wrapping"
+msgstr ""
+
+#: admin/class-cbxdynamicsidebar-admin.php:333
+#@ cbxdynamicsidebar
+msgid "After Title Html Wrapping"
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: cbxdynamicsidebar.php:0
+#@ cbxdynamicsidebar
+msgid "CBX Dynamic Sidebar"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: cbxdynamicsidebar.php:0
+#@ cbxdynamicsidebar
+msgid "http://wpboxr.com/product/cbx-dynamic-sidebar-for-wordpress"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: cbxdynamicsidebar.php:0
+#@ cbxdynamicsidebar
+msgid "This is a short description of what the plugin does. It's displayed in the WordPress admin area."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: cbxdynamicsidebar.php:0
+#@ cbxdynamicsidebar
+msgid "WPBoxr"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: cbxdynamicsidebar.php:0
+#@ cbxdynamicsidebar
+msgid "http://wpboxr.com"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: cbxdynamicsidebar.php:0
+#@ cbxdynamicsidebar
+msgid "1.0.0"
+msgstr ""
+
